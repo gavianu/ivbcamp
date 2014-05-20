@@ -8,13 +8,19 @@
 
 #import "SessionConnection.h"
 
+#import "RRpcSocket.h"
+
+#define kSenderChannels 10
+#define kReceiversChannels 50
+
+
 @implementation SessionConnection
 
 #pragma mark - initialization
 
 - (id)init {
     if((self = [super init])) {
-        _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+        _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
         _rrpcSenders = [[NSMutableArray alloc] init];
         _rrpcReceivers = [[NSMutableArray alloc] init];
     }
@@ -34,7 +40,9 @@
 
 #pragma mark - deallocation
 
-//No need on ARC enable
+- (void)dealloc {
+    [_socket setDelegate:nil];
+}
 
 
 #pragma mark - Methods
@@ -62,6 +70,15 @@
 }
 
 - (void)initSenders {
+    RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
+    rrpcSocket.receiver = NO;
+    __block __weak RRpcSocket *weakRRpcSocket = rrpcSocket;
+    dispatch_queue_t connectQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(connectQueue, ^(void) {
+        __block __strong RRpcSocket *strongRRpcSocket = weakRRpcSocket;
+        [strongRRpcSocket connect];
+    });
+//    [rrpcSocket connect];
 }
 
 - (void)initReceivers {

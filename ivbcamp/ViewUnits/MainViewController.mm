@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "SessionConnection.h"
 
 @interface MainViewController ()
 
@@ -65,6 +66,8 @@
     
     _serverAddress = @"192.168.0.102";
     
+    [[SessionConnection sharedInstance] connectToHost:_serverAddress onPort:7827 error:nil];
+
 }
 
 - (void)viewDidLoad {
@@ -80,6 +83,7 @@
 #pragma mark - actions
 
 - (void)connectButtonTapped {
+    [[SessionConnection sharedInstance] startAudioSession];    
 }
 
 @end

@@ -12,8 +12,8 @@
 		9B2B7FAA192B6AD400088B9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA9192B6AD400088B9B /* UIKit.framework */; };
 		9B2B7FAC192B6AD400088B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FAB192B6AD400088B9B /* CoreData.framework */; };
 		9B2B7FB2192B6AD400088B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB0192B6AD400088B9B /* InfoPlist.strings */; };
-		9B2B7FB4192B6AD400088B9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB3192B6AD400088B9B /* main.m */; };
-		9B2B7FB8192B6AD400088B9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB7192B6AD400088B9B /* AppDelegate.m */; };
+		9B2B7FB4192B6AD400088B9B /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB3192B6AD400088B9B /* main.mm */; };
+		9B2B7FB8192B6AD400088B9B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB7192B6AD400088B9B /* AppDelegate.mm */; };
 		9B2B7FBB192B6AD400088B9B /* ivbcamp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB9192B6AD400088B9B /* ivbcamp.xcdatamodeld */; };
 		9B2B7FBD192B6AD400088B9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FBC192B6AD400088B9B /* Images.xcassets */; };
 		9B2B7FC4192B6AD400088B9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FC3192B6AD400088B9B /* XCTest.framework */; };
@@ -24,12 +24,13 @@
 		9B2B7FD1192B6AD400088B9B /* ivbcampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */; };
 		9BD5E5FC192B73EF0065815C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E5F9192B73EF0065815C /* GCDAsyncSocket.m */; };
 		9BD5E5FD192B73EF0065815C /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */; };
-		9BD5E601192B74480065815C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E600192B74480065815C /* MainViewController.m */; };
+		9BD5E601192B74480065815C /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E600192B74480065815C /* MainViewController.mm */; };
 		9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E605192B76410065815C /* AACELDDecoder.cpp */; };
 		9BD5E60A192B76410065815C /* AACELDEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E607192B76410065815C /* AACELDEncoder.cpp */; };
 		9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E60C192B766D0065815C /* VBCAudioSession.m */; };
 		9BD5E610192B76BA0065815C /* AudioDataProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E60F192B76BA0065815C /* AudioDataProcessor.mm */; };
-		9BD5E613192B78630065815C /* SessionConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E612192B78630065815C /* SessionConnection.m */; };
+		9BD5E613192B78630065815C /* SessionConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E612192B78630065815C /* SessionConnection.mm */; };
+		9BD5E616192B86C50065815C /* RRpcSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E615192B86C50065815C /* RRpcSocket.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +51,10 @@
 		9B2B7FAB192B6AD400088B9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9B2B7FAF192B6AD400088B9B /* ivbcamp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ivbcamp-Info.plist"; sourceTree = "<group>"; };
 		9B2B7FB1192B6AD400088B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9B2B7FB3192B6AD400088B9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B2B7FB3192B6AD400088B9B /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		9B2B7FB5192B6AD400088B9B /* ivbcamp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ivbcamp-Prefix.pch"; sourceTree = "<group>"; };
 		9B2B7FB6192B6AD400088B9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9B2B7FB7192B6AD400088B9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9B2B7FB7192B6AD400088B9B /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		9B2B7FBA192B6AD400088B9B /* ivbcamp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ivbcamp.xcdatamodel; sourceTree = "<group>"; };
 		9B2B7FBC192B6AD400088B9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9B2B7FC2192B6AD400088B9B /* ivbcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ivbcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +67,7 @@
 		9BD5E5FA192B73EF0065815C /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		9BD5E5FF192B74480065815C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		9BD5E600192B74480065815C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9BD5E600192B74480065815C /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		9BD5E605192B76410065815C /* AACELDDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AACELDDecoder.cpp; sourceTree = "<group>"; };
 		9BD5E606192B76410065815C /* AACELDDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACELDDecoder.h; sourceTree = "<group>"; };
 		9BD5E607192B76410065815C /* AACELDEncoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AACELDEncoder.cpp; sourceTree = "<group>"; };
@@ -76,7 +77,9 @@
 		9BD5E60E192B76BA0065815C /* AudioDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDataProcessor.h; sourceTree = "<group>"; };
 		9BD5E60F192B76BA0065815C /* AudioDataProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioDataProcessor.mm; sourceTree = "<group>"; };
 		9BD5E611192B78630065815C /* SessionConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionConnection.h; sourceTree = "<group>"; };
-		9BD5E612192B78630065815C /* SessionConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionConnection.m; sourceTree = "<group>"; };
+		9BD5E612192B78630065815C /* SessionConnection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SessionConnection.mm; sourceTree = "<group>"; };
+		9BD5E614192B86C50065815C /* RRpcSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRpcSocket.h; sourceTree = "<group>"; };
+		9BD5E615192B86C50065815C /* RRpcSocket.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RRpcSocket.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +146,7 @@
 				9BD5E5FE192B74230065815C /* ViewUnits */,
 				9BD5E5F6192B739E0065815C /* NetworkUnits */,
 				9B2B7FB6192B6AD400088B9B /* AppDelegate.h */,
-				9B2B7FB7192B6AD400088B9B /* AppDelegate.m */,
+				9B2B7FB7192B6AD400088B9B /* AppDelegate.mm */,
 				9B2B7FBC192B6AD400088B9B /* Images.xcassets */,
 				9B2B7FB9192B6AD400088B9B /* ivbcamp.xcdatamodeld */,
 				9B2B7FAE192B6AD400088B9B /* Supporting Files */,
@@ -156,7 +159,7 @@
 			children = (
 				9B2B7FAF192B6AD400088B9B /* ivbcamp-Info.plist */,
 				9B2B7FB0192B6AD400088B9B /* InfoPlist.strings */,
-				9B2B7FB3192B6AD400088B9B /* main.m */,
+				9B2B7FB3192B6AD400088B9B /* main.mm */,
 				9B2B7FB5192B6AD400088B9B /* ivbcamp-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -185,7 +188,9 @@
 			children = (
 				9BD5E5F7192B73B70065815C /* GCDAsyncSocket */,
 				9BD5E611192B78630065815C /* SessionConnection.h */,
-				9BD5E612192B78630065815C /* SessionConnection.m */,
+				9BD5E612192B78630065815C /* SessionConnection.mm */,
+				9BD5E614192B86C50065815C /* RRpcSocket.h */,
+				9BD5E615192B86C50065815C /* RRpcSocket.mm */,
 			);
 			path = NetworkUnits;
 			sourceTree = "<group>";
@@ -205,7 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				9BD5E5FF192B74480065815C /* MainViewController.h */,
-				9BD5E600192B74480065815C /* MainViewController.m */,
+				9BD5E600192B74480065815C /* MainViewController.mm */,
 			);
 			path = ViewUnits;
 			sourceTree = "<group>";
@@ -337,15 +342,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BD5E5FC192B73EF0065815C /* GCDAsyncSocket.m in Sources */,
-				9BD5E601192B74480065815C /* MainViewController.m in Sources */,
+				9BD5E601192B74480065815C /* MainViewController.mm in Sources */,
 				9BD5E5FD192B73EF0065815C /* GCDAsyncUdpSocket.m in Sources */,
-				9B2B7FB8192B6AD400088B9B /* AppDelegate.m in Sources */,
+				9B2B7FB8192B6AD400088B9B /* AppDelegate.mm in Sources */,
 				9BD5E60A192B76410065815C /* AACELDEncoder.cpp in Sources */,
 				9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */,
 				9B2B7FBB192B6AD400088B9B /* ivbcamp.xcdatamodeld in Sources */,
-				9BD5E613192B78630065815C /* SessionConnection.m in Sources */,
+				9BD5E616192B86C50065815C /* RRpcSocket.mm in Sources */,
+				9BD5E613192B78630065815C /* SessionConnection.mm in Sources */,
 				9BD5E610192B76BA0065815C /* AudioDataProcessor.mm in Sources */,
-				9B2B7FB4192B6AD400088B9B /* main.m in Sources */,
+				9B2B7FB4192B6AD400088B9B /* main.mm in Sources */,
 				9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
 				INFOPLIST_FILE = "ivbcamp/ivbcamp-Info.plist";
@@ -480,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
 				INFOPLIST_FILE = "ivbcamp/ivbcamp-Info.plist";
