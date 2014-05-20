@@ -22,6 +22,14 @@
 		9B2B7FC7192B6AD400088B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FAB192B6AD400088B9B /* CoreData.framework */; };
 		9B2B7FCF192B6AD400088B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */; };
 		9B2B7FD1192B6AD400088B9B /* ivbcampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */; };
+		9BD5E5FC192B73EF0065815C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E5F9192B73EF0065815C /* GCDAsyncSocket.m */; };
+		9BD5E5FD192B73EF0065815C /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */; };
+		9BD5E601192B74480065815C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E600192B74480065815C /* MainViewController.m */; };
+		9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E605192B76410065815C /* AACELDDecoder.cpp */; };
+		9BD5E60A192B76410065815C /* AACELDEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E607192B76410065815C /* AACELDEncoder.cpp */; };
+		9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E60C192B766D0065815C /* VBCAudioSession.m */; };
+		9BD5E610192B76BA0065815C /* AudioDataProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E60F192B76BA0065815C /* AudioDataProcessor.mm */; };
+		9BD5E613192B78630065815C /* SessionConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E612192B78630065815C /* SessionConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,22 @@
 		9B2B7FCC192B6AD400088B9B /* ivbcampTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ivbcampTests-Info.plist"; sourceTree = "<group>"; };
 		9B2B7FCE192B6AD400088B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ivbcampTests.m; sourceTree = "<group>"; };
+		9BD5E5F8192B73EF0065815C /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		9BD5E5F9192B73EF0065815C /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		9BD5E5FA192B73EF0065815C /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		9BD5E5FF192B74480065815C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9BD5E600192B74480065815C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9BD5E605192B76410065815C /* AACELDDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AACELDDecoder.cpp; sourceTree = "<group>"; };
+		9BD5E606192B76410065815C /* AACELDDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACELDDecoder.h; sourceTree = "<group>"; };
+		9BD5E607192B76410065815C /* AACELDEncoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AACELDEncoder.cpp; sourceTree = "<group>"; };
+		9BD5E608192B76410065815C /* AACELDEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AACELDEncoder.h; sourceTree = "<group>"; };
+		9BD5E60B192B766D0065815C /* VBCAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VBCAudioSession.h; sourceTree = "<group>"; };
+		9BD5E60C192B766D0065815C /* VBCAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VBCAudioSession.m; sourceTree = "<group>"; };
+		9BD5E60E192B76BA0065815C /* AudioDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDataProcessor.h; sourceTree = "<group>"; };
+		9BD5E60F192B76BA0065815C /* AudioDataProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioDataProcessor.mm; sourceTree = "<group>"; };
+		9BD5E611192B78630065815C /* SessionConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionConnection.h; sourceTree = "<group>"; };
+		9BD5E612192B78630065815C /* SessionConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +139,9 @@
 		9B2B7FAD192B6AD400088B9B /* ivbcamp */ = {
 			isa = PBXGroup;
 			children = (
+				9BD5E602192B76020065815C /* AudioUnits */,
+				9BD5E5FE192B74230065815C /* ViewUnits */,
+				9BD5E5F6192B739E0065815C /* NetworkUnits */,
 				9B2B7FB6192B6AD400088B9B /* AppDelegate.h */,
 				9B2B7FB7192B6AD400088B9B /* AppDelegate.m */,
 				9B2B7FBC192B6AD400088B9B /* Images.xcassets */,
@@ -151,6 +178,67 @@
 				9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BD5E5F6192B739E0065815C /* NetworkUnits */ = {
+			isa = PBXGroup;
+			children = (
+				9BD5E5F7192B73B70065815C /* GCDAsyncSocket */,
+				9BD5E611192B78630065815C /* SessionConnection.h */,
+				9BD5E612192B78630065815C /* SessionConnection.m */,
+			);
+			path = NetworkUnits;
+			sourceTree = "<group>";
+		};
+		9BD5E5F7192B73B70065815C /* GCDAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				9BD5E5F8192B73EF0065815C /* GCDAsyncSocket.h */,
+				9BD5E5F9192B73EF0065815C /* GCDAsyncSocket.m */,
+				9BD5E5FA192B73EF0065815C /* GCDAsyncUdpSocket.h */,
+				9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCDAsyncSocket;
+			sourceTree = "<group>";
+		};
+		9BD5E5FE192B74230065815C /* ViewUnits */ = {
+			isa = PBXGroup;
+			children = (
+				9BD5E5FF192B74480065815C /* MainViewController.h */,
+				9BD5E600192B74480065815C /* MainViewController.m */,
+			);
+			path = ViewUnits;
+			sourceTree = "<group>";
+		};
+		9BD5E602192B76020065815C /* AudioUnits */ = {
+			isa = PBXGroup;
+			children = (
+				9BD5E603192B76160065815C /* Codecs */,
+				9BD5E60B192B766D0065815C /* VBCAudioSession.h */,
+				9BD5E60C192B766D0065815C /* VBCAudioSession.m */,
+				9BD5E60E192B76BA0065815C /* AudioDataProcessor.h */,
+				9BD5E60F192B76BA0065815C /* AudioDataProcessor.mm */,
+			);
+			path = AudioUnits;
+			sourceTree = "<group>";
+		};
+		9BD5E603192B76160065815C /* Codecs */ = {
+			isa = PBXGroup;
+			children = (
+				9BD5E604192B76250065815C /* AAC */,
+			);
+			path = Codecs;
+			sourceTree = "<group>";
+		};
+		9BD5E604192B76250065815C /* AAC */ = {
+			isa = PBXGroup;
+			children = (
+				9BD5E605192B76410065815C /* AACELDDecoder.cpp */,
+				9BD5E606192B76410065815C /* AACELDDecoder.h */,
+				9BD5E607192B76410065815C /* AACELDEncoder.cpp */,
+				9BD5E608192B76410065815C /* AACELDEncoder.h */,
+			);
+			path = AAC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,9 +336,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BD5E5FC192B73EF0065815C /* GCDAsyncSocket.m in Sources */,
+				9BD5E601192B74480065815C /* MainViewController.m in Sources */,
+				9BD5E5FD192B73EF0065815C /* GCDAsyncUdpSocket.m in Sources */,
 				9B2B7FB8192B6AD400088B9B /* AppDelegate.m in Sources */,
+				9BD5E60A192B76410065815C /* AACELDEncoder.cpp in Sources */,
+				9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */,
 				9B2B7FBB192B6AD400088B9B /* ivbcamp.xcdatamodeld in Sources */,
+				9BD5E613192B78630065815C /* SessionConnection.m in Sources */,
+				9BD5E610192B76BA0065815C /* AudioDataProcessor.mm in Sources */,
 				9B2B7FB4192B6AD400088B9B /* main.m in Sources */,
+				9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +549,7 @@
 				9B2B7FD6192B6AD400088B9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B2B7FD7192B6AD400088B9B /* Build configuration list for PBXNativeTarget "ivbcampTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +558,7 @@
 				9B2B7FD9192B6AD400088B9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
