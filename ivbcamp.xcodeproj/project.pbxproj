@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B2B7FA6192B6AD400088B9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA5192B6AD400088B9B /* Foundation.framework */; };
+		9B2B7FA8192B6AD400088B9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA7192B6AD400088B9B /* CoreGraphics.framework */; };
+		9B2B7FAA192B6AD400088B9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA9192B6AD400088B9B /* UIKit.framework */; };
+		9B2B7FAC192B6AD400088B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FAB192B6AD400088B9B /* CoreData.framework */; };
+		9B2B7FB2192B6AD400088B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB0192B6AD400088B9B /* InfoPlist.strings */; };
+		9B2B7FB4192B6AD400088B9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB3192B6AD400088B9B /* main.m */; };
+		9B2B7FB8192B6AD400088B9B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB7192B6AD400088B9B /* AppDelegate.m */; };
+		9B2B7FBB192B6AD400088B9B /* ivbcamp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FB9192B6AD400088B9B /* ivbcamp.xcdatamodeld */; };
+		9B2B7FBD192B6AD400088B9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FBC192B6AD400088B9B /* Images.xcassets */; };
+		9B2B7FC4192B6AD400088B9B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FC3192B6AD400088B9B /* XCTest.framework */; };
+		9B2B7FC5192B6AD400088B9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA5192B6AD400088B9B /* Foundation.framework */; };
+		9B2B7FC6192B6AD400088B9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA9192B6AD400088B9B /* UIKit.framework */; };
+		9B2B7FC7192B6AD400088B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FAB192B6AD400088B9B /* CoreData.framework */; };
+		9B2B7FCF192B6AD400088B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */; };
+		9B2B7FD1192B6AD400088B9B /* ivbcampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B2B7FC8192B6AD400088B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B2B7F9A192B6AD400088B9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B2B7FA1192B6AD400088B9B;
+			remoteInfo = ivbcamp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9B2B7FA2192B6AD400088B9B /* ivbcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ivbcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B2B7FA5192B6AD400088B9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9B2B7FA7192B6AD400088B9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9B2B7FA9192B6AD400088B9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9B2B7FAB192B6AD400088B9B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9B2B7FAF192B6AD400088B9B /* ivbcamp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ivbcamp-Info.plist"; sourceTree = "<group>"; };
+		9B2B7FB1192B6AD400088B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9B2B7FB3192B6AD400088B9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9B2B7FB5192B6AD400088B9B /* ivbcamp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ivbcamp-Prefix.pch"; sourceTree = "<group>"; };
+		9B2B7FB6192B6AD400088B9B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9B2B7FB7192B6AD400088B9B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9B2B7FBA192B6AD400088B9B /* ivbcamp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ivbcamp.xcdatamodel; sourceTree = "<group>"; };
+		9B2B7FBC192B6AD400088B9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9B2B7FC2192B6AD400088B9B /* ivbcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ivbcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B2B7FC3192B6AD400088B9B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9B2B7FCC192B6AD400088B9B /* ivbcampTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ivbcampTests-Info.plist"; sourceTree = "<group>"; };
+		9B2B7FCE192B6AD400088B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ivbcampTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B2B7F9F192B6AD400088B9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2B7FA8192B6AD400088B9B /* CoreGraphics.framework in Frameworks */,
+				9B2B7FAC192B6AD400088B9B /* CoreData.framework in Frameworks */,
+				9B2B7FAA192B6AD400088B9B /* UIKit.framework in Frameworks */,
+				9B2B7FA6192B6AD400088B9B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B2B7FBF192B6AD400088B9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2B7FC4192B6AD400088B9B /* XCTest.framework in Frameworks */,
+				9B2B7FC7192B6AD400088B9B /* CoreData.framework in Frameworks */,
+				9B2B7FC6192B6AD400088B9B /* UIKit.framework in Frameworks */,
+				9B2B7FC5192B6AD400088B9B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B2B7F99192B6AD400088B9B = {
+			isa = PBXGroup;
+			children = (
+				9B2B7FAD192B6AD400088B9B /* ivbcamp */,
+				9B2B7FCA192B6AD400088B9B /* ivbcampTests */,
+				9B2B7FA4192B6AD400088B9B /* Frameworks */,
+				9B2B7FA3192B6AD400088B9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B2B7FA3192B6AD400088B9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B7FA2192B6AD400088B9B /* ivbcamp.app */,
+				9B2B7FC2192B6AD400088B9B /* ivbcampTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B2B7FA4192B6AD400088B9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B7FA5192B6AD400088B9B /* Foundation.framework */,
+				9B2B7FA7192B6AD400088B9B /* CoreGraphics.framework */,
+				9B2B7FA9192B6AD400088B9B /* UIKit.framework */,
+				9B2B7FAB192B6AD400088B9B /* CoreData.framework */,
+				9B2B7FC3192B6AD400088B9B /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B2B7FAD192B6AD400088B9B /* ivbcamp */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B7FB6192B6AD400088B9B /* AppDelegate.h */,
+				9B2B7FB7192B6AD400088B9B /* AppDelegate.m */,
+				9B2B7FBC192B6AD400088B9B /* Images.xcassets */,
+				9B2B7FB9192B6AD400088B9B /* ivbcamp.xcdatamodeld */,
+				9B2B7FAE192B6AD400088B9B /* Supporting Files */,
+			);
+			path = ivbcamp;
+			sourceTree = "<group>";
+		};
+		9B2B7FAE192B6AD400088B9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B7FAF192B6AD400088B9B /* ivbcamp-Info.plist */,
+				9B2B7FB0192B6AD400088B9B /* InfoPlist.strings */,
+				9B2B7FB3192B6AD400088B9B /* main.m */,
+				9B2B7FB5192B6AD400088B9B /* ivbcamp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9B2B7FCA192B6AD400088B9B /* ivbcampTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */,
+				9B2B7FCB192B6AD400088B9B /* Supporting Files */,
+			);
+			path = ivbcampTests;
+			sourceTree = "<group>";
+		};
+		9B2B7FCB192B6AD400088B9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9B2B7FCC192B6AD400088B9B /* ivbcampTests-Info.plist */,
+				9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9B2B7FA1192B6AD400088B9B /* ivbcamp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B2B7FD4192B6AD400088B9B /* Build configuration list for PBXNativeTarget "ivbcamp" */;
+			buildPhases = (
+				9B2B7F9E192B6AD400088B9B /* Sources */,
+				9B2B7F9F192B6AD400088B9B /* Frameworks */,
+				9B2B7FA0192B6AD400088B9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ivbcamp;
+			productName = ivbcamp;
+			productReference = 9B2B7FA2192B6AD400088B9B /* ivbcamp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B2B7FC1192B6AD400088B9B /* ivbcampTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B2B7FD7192B6AD400088B9B /* Build configuration list for PBXNativeTarget "ivbcampTests" */;
+			buildPhases = (
+				9B2B7FBE192B6AD400088B9B /* Sources */,
+				9B2B7FBF192B6AD400088B9B /* Frameworks */,
+				9B2B7FC0192B6AD400088B9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B2B7FC9192B6AD400088B9B /* PBXTargetDependency */,
+			);
+			name = ivbcampTests;
+			productName = ivbcampTests;
+			productReference = 9B2B7FC2192B6AD400088B9B /* ivbcampTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B2B7F9A192B6AD400088B9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Octavian Stirbei";
+				TargetAttributes = {
+					9B2B7FC1192B6AD400088B9B = {
+						TestTargetID = 9B2B7FA1192B6AD400088B9B;
+					};
+				};
+			};
+			buildConfigurationList = 9B2B7F9D192B6AD400088B9B /* Build configuration list for PBXProject "ivbcamp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9B2B7F99192B6AD400088B9B;
+			productRefGroup = 9B2B7FA3192B6AD400088B9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B2B7FA1192B6AD400088B9B /* ivbcamp */,
+				9B2B7FC1192B6AD400088B9B /* ivbcampTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B2B7FA0192B6AD400088B9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2B7FB2192B6AD400088B9B /* InfoPlist.strings in Resources */,
+				9B2B7FBD192B6AD400088B9B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B2B7FC0192B6AD400088B9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2B7FCF192B6AD400088B9B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B2B7F9E192B6AD400088B9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2B7FB8192B6AD400088B9B /* AppDelegate.m in Sources */,
+				9B2B7FBB192B6AD400088B9B /* ivbcamp.xcdatamodeld in Sources */,
+				9B2B7FB4192B6AD400088B9B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B2B7FBE192B6AD400088B9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B2B7FD1192B6AD400088B9B /* ivbcampTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B2B7FC9192B6AD400088B9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B2B7FA1192B6AD400088B9B /* ivbcamp */;
+			targetProxy = 9B2B7FC8192B6AD400088B9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9B2B7FB0192B6AD400088B9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B2B7FB1192B6AD400088B9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9B2B7FCE192B6AD400088B9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9B2B7FD2192B6AD400088B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B2B7FD3192B6AD400088B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B2B7FD5192B6AD400088B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
+				INFOPLIST_FILE = "ivbcamp/ivbcamp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9B2B7FD6192B6AD400088B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
+				INFOPLIST_FILE = "ivbcamp/ivbcamp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9B2B7FD8192B6AD400088B9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ivbcamp.app/ivbcamp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ivbcampTests/ivbcampTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9B2B7FD9192B6AD400088B9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ivbcamp.app/ivbcamp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
+				INFOPLIST_FILE = "ivbcampTests/ivbcampTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B2B7F9D192B6AD400088B9B /* Build configuration list for PBXProject "ivbcamp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B2B7FD2192B6AD400088B9B /* Debug */,
+				9B2B7FD3192B6AD400088B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B2B7FD4192B6AD400088B9B /* Build configuration list for PBXNativeTarget "ivbcamp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B2B7FD5192B6AD400088B9B /* Debug */,
+				9B2B7FD6192B6AD400088B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9B2B7FD7192B6AD400088B9B /* Build configuration list for PBXNativeTarget "ivbcampTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B2B7FD8192B6AD400088B9B /* Debug */,
+				9B2B7FD9192B6AD400088B9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9B2B7FB9192B6AD400088B9B /* ivbcamp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B2B7FBA192B6AD400088B9B /* ivbcamp.xcdatamodel */,
+			);
+			currentVersion = 9B2B7FBA192B6AD400088B9B /* ivbcamp.xcdatamodel */;
+			path = ivbcamp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9B2B7F9A192B6AD400088B9B /* Project object */;
+}
