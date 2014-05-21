@@ -10,8 +10,10 @@
 
 #import "RRpcSocket.h"
 
+#import "VBCAudioSession.h"
+
 #define kSenderChannels 10
-#define kReceiversChannels 50
+#define kReceiversChannels 10
 
 
 @implementation SessionConnection
@@ -42,6 +44,19 @@
 
 - (void)dealloc {
     [_socket setDelegate:nil];
+    [_socket release];
+    [_sessionUUID release];
+    [_clientUUID release];
+    [_host release];
+    [_rrpcSenders removeAllObjects];
+    [_rrpcSenders release];
+    [_rrpcReceivers removeAllObjects];
+    [_rrpcReceivers release];
+    if(sendTmpBuffer != nil) {
+        [sendTmpBuffer release];
+        sendTmpBuffer = nil;
+    }
+    [super dealloc];
 }
 
 
@@ -64,32 +79,37 @@
     if (_connected) {
         NSMutableDictionary *requestData = [[NSMutableDictionary alloc] init];
         [requestData setObject:@"createSession" forKey:@"request"];
-        [_socket writeData:[NSJSONSerialization dataWithJSONObject:requestData options:kNilOptions error:nil] withTimeout:-1 tag:-1];
+        sendTmpBuffer = [[NSJSONSerialization dataWithJSONObject:requestData options:kNilOptions error:nil] retain];
+        [_socket writeData:sendTmpBuffer withTimeout:-1 tag:-1];
         [_socket readDataWithTimeout:-1 tag:2];
     }
 }
 
 - (void)initSenders {
-    RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
-    rrpcSocket.receiver = NO;
-    __block __weak RRpcSocket *weakRRpcSocket = rrpcSocket;
-    dispatch_queue_t connectQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(connectQueue, ^(void) {
-        __block __strong RRpcSocket *strongRRpcSocket = weakRRpcSocket;
-        [strongRRpcSocket connect];
+    dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+    dispatch_async(createSendersQueue, ^(void) {
+        for(int i = 0; i < kSenderChannels; i++) {
+            RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
+            rrpcSocket.receiver = NO;
+        }
     });
-//    [rrpcSocket connect];
 }
 
 - (void)initReceivers {
-    
+    dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+    dispatch_async(createSendersQueue, ^(void) {
+        for(int i = 0; i < kReceiversChannels; i++) {
+            RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
+            rrpcSocket.receiver = YES;
+        }
+    });
 }
 
 #pragma mark - GCDAsyncSocket delegate methods
 
 - (void)socket:(GCDAsyncSocket *)sender didConnectToHost:(NSString *)host port:(UInt16)port {
     _connected = YES;
-    _host = host;
+    _host = [host retain];
     _port = port;
     NSLog(@"Cool, I'm connected! That was easy.");
 }
@@ -101,6 +121,8 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
     NSLog(@"Cool, I did write! That was easy.");
+    [sendTmpBuffer release];
+    sendTmpBuffer = nil;
 }
 
 - (void)socket:(GCDAsyncSocket *)sender didReadData:(NSData *)data withTag:(long)tag {
@@ -108,12 +130,15 @@
     NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     NSString *request = [response objectForKey:@"request"];
     if ([request isEqualToString:@"createSession"] || [request isEqualToString:@"connectSession"] ) {
-        _sessionUUID = [response objectForKey:@"sessionUUID"];
-        _clientUUID = [response objectForKey:@"clientUUID"];
+        _sessionUUID = [[response objectForKey:@"sessionUUID"] retain];
+        _clientUUID = [[response objectForKey:@"clientUUID"] retain];
         [self initSenders];
         [self initReceivers];
+        [[VBCAudioSession sharedInstance] startCapture];
+
         NSLog(@"New session connection started. Session: %@  Client: %@", _sessionUUID, _clientUUID);
     }
+    
 }
 
 

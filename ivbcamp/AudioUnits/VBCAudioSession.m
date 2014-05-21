@@ -122,6 +122,10 @@ static OSStatus playbackCallback(void *inRefCon,
 
 //No need on ARC enable
 
+- (void)dealloc {
+    [super dealloc];
+}
+
 #pragma mark - setup
 
 - (void)configAudioSession {

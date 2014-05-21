@@ -10,11 +10,13 @@
 
 #import "GCDAsyncSocket.h"
 
-@interface RRpcSocket : NSObject
+@interface RRpcSocket : NSObject {
+    NSData  *sendTmpBuffer; //release after write on socket;    
+}
 
 @property(nonatomic) BOOL receiver;
 @property (nonatomic, strong, readonly) GCDAsyncSocket *socket;
 
-- (void)connect;
+-(void)send:(NSDictionary *)jsonDictionary;
 
 @end
