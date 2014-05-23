@@ -201,7 +201,7 @@ static OSStatus playbackCallback(void *inRefCon,
 - (void)setStreamBasicDescription {
 	// Describe format
 	AudioStreamBasicDescription audioFormat;
-	audioFormat.mSampleRate			= 44100.00;
+	audioFormat.mSampleRate			= 8000.0;
 	audioFormat.mFormatID			= kAudioFormatLinearPCM;
 	audioFormat.mFormatFlags		= kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
 	audioFormat.mFramesPerPacket	= 1;

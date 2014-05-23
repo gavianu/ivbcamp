@@ -107,6 +107,7 @@
 - (void)socket:(GCDTcpSocket *)socket didReadData:(NSData*)data {
     if(_receiver) {
         NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+        SessionConnection *sessionConnection = [SessionConnection sharedInstance];
         if ([[response objectForKey:@"request"] isEqualToString:@"incomingData"]) {
             NSNumber *dataPckCount = [response objectForKey:@"noPck"];
             AudioDataProcessor *audioDataProcessor = [AudioDataProcessor sharedInstance];
@@ -116,22 +117,23 @@
                 
                 NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
                 
-                SessionConnection *sessionConnection = [SessionConnection sharedInstance];
                 double tmpMilis = [[sessionConnection millis] doubleValue];
-                double tmpMilis2 = - ((double)[date timeIntervalSinceReferenceDate]) * 1000;
-//                [sessionConnection setMillis:[NSNumber numberWithDouble:tmpMilis]];
+                tmpMilis += -[date timeIntervalSinceNow]*1000;
+                [sessionConnection setMillis:[NSNumber numberWithDouble:tmpMilis]];
                 long tmpCnt = [[sessionConnection recPcksCnt] longValue];
-//                [sessionConnection setRecPcksCnt:[NSNumber numberWithLong:tmpCnt++]];
-                NSLog(@"--- Lag: %f Jitter: %f , %f, %lu ", -[date timeIntervalSinceNow] * 1000, tmpMilis/tmpCnt, tmpMilis2, tmpCnt);
+                [sessionConnection setRecPcksCnt:[NSNumber numberWithLong:++tmpCnt]];
+                NSLog(@"--- Lag: %f Jitter: %f , total packets:  %lu ", -[date timeIntervalSinceNow] * 1000, tmpMilis/tmpCnt, tmpCnt);
                 
                 
                 audioDataProcessor.lastPckCnt = [NSNumber numberWithLong:[dataPckCount longValue]];
                 [[audioDataProcessor audioOutputBuffer] addObject:response];
             }else {
-                UInt64 dropPckCnt = [[audioDataProcessor dropPckCnt] longValue];
+                long dropPckCnt = [[audioDataProcessor dropPckCnt] longValue];
                 dropPckCnt += [[audioDataProcessor lastPckCnt] longValue] - [dataPckCount longValue];
+                long tmpCnt = [[sessionConnection recPcksCnt] longValue];
+                [sessionConnection setRecPcksCnt:[NSNumber numberWithLong:++tmpCnt]];
                 audioDataProcessor.dropPckCnt = [NSNumber numberWithLong:dropPckCnt];
-                NSLog(@"drop packet count -----> %lu  ", [[audioDataProcessor dropPckCnt] longValue]);
+                NSLog(@"drop packet count -----> %lu total packets: %lu, loosage: %f ", dropPckCnt, tmpCnt, ((double)(dropPckCnt/tmpCnt) * 100));
             }
         }
     }
