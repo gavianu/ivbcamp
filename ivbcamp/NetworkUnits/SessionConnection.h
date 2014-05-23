@@ -8,22 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-#import "GCDAsyncSocket.h"
+//#import "GCDAsyncSocket.h"
+#import "GCDTcpSocket.h"
 
 @interface SessionConnection : NSObject {
     
-    NSData  *sendTmpBuffer; //release after write on socket;
+//    NSData  *sendTmpBuffer; //release after write on socket;
     
 }
 
 @property (nonatomic) BOOL  connected;
-@property (nonatomic, retain, readonly) GCDAsyncSocket *socket;
-@property (nonatomic, retain)   NSString *sessionUUID;
-@property (nonatomic, retain)   NSString *clientUUID;
-@property (nonatomic, readonly, retain) NSString *host;
+//@property (nonatomic, strong, readonly) GCDAsyncSocket *socket;
+@property (nonatomic, strong, readonly) GCDTcpSocket *socket;
+@property (nonatomic, strong)   NSString *sessionUUID;
+@property (nonatomic, strong)   NSString *clientUUID;
+@property (nonatomic, readonly, strong) NSString *host;
 @property (nonatomic) uint16_t port;
-@property (nonatomic, retain) NSMutableArray *rrpcSenders;
-@property (nonatomic, retain) NSMutableArray *rrpcReceivers;
+@property (nonatomic, strong) NSMutableArray *rrpcSenders;
+@property (nonatomic, strong) NSMutableArray *rrpcReceivers;
+@property (nonatomic, strong) NSNumber *millis;
+@property (nonatomic, strong) NSNumber *recPcksCnt;
 
 
 

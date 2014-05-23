@@ -88,49 +88,51 @@ void DestroyAACELD() {
 
 - (void)dealloc {
     DestroyAACELD();
-    [_audioOutputBuffer removeAllObjects];
-    [_audioOutputBuffer release];
-    [_sendPcksCnt release];
-    [_lastPckCnt release];
-    [_dropPckCnt release];
-    
-    free(rawInputData->mBuffers[0].mData);
-    free(aacEncodedBuffer.data);
-    
-    [super dealloc];
+//    [_audioOutputBuffer removeAllObjects];
+//    [_audioOutputBuffer release];
+//    [_sendPcksCnt release];
+//    [_lastPckCnt release];
+//    [_dropPckCnt release];
+//    
+//    free(rawInputData->mBuffers[0].mData);
+//    free(aacEncodedBuffer.data);
+//    
+//    [super dealloc];
 }
 
 #pragma mark - Audio IO callbacks
 
 - (void)processRawInputData:(AudioBufferList *)inputDataBuffer {
+    NSLog(@"trimit date ");
     SessionConnection *sessionConnection = [SessionConnection sharedInstance];
     if ([[sessionConnection rrpcSenders] count] <= 0) {
         return;
     }
     EncodeAACELD(g_encoder, &inputDataBuffer->mBuffers[0], &aacEncodedBuffer);
-    UInt64 value = [_sendPcksCnt longValue];
+    long value = [_sendPcksCnt longValue];
     _sendPcksCnt = [NSNumber numberWithLong:++value];
     NSMutableDictionary *dataPacket = [[NSMutableDictionary alloc] init];
     [dataPacket setObject:@"incomingData" forKey:@"request"];
     [dataPacket setObject:[sessionConnection sessionUUID] forKey:@"sessionUUID"];
     [dataPacket setObject:[sessionConnection clientUUID] forKey:@"clientUUID"];
     [dataPacket setObject:_sendPcksCnt forKey:@"noPck"];
-    NSNumber *sendTime = [[NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]] autorelease];
+    NSNumber *sendTime = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
     [dataPacket setObject:sendTime forKey:@"sendTime"];
 
     NSData *audioData = [[NSData alloc] initWithBytes:aacEncodedBuffer.data length:aacEncodedBuffer.mDataBytesSize];
-    NSString* newStr = [[audioData base64EncodedString] autorelease];
-    [audioData release];
+    NSString* newStr = [audioData base64EncodedString];
+//    [audioData release];
     [dataPacket setObject:newStr forKey:@"audioData"];
+//    NSLog(@"trimit date ");
     [[[sessionConnection rrpcSenders] firstObject] send:dataPacket];
-    [dataPacket release];
+////    [dataPacket release];
     
 }
 
 - (void)processOutput:(AudioBufferList *)outputDataBuffer {
     if ([_audioOutputBuffer count] > 0) {
         NSDictionary *audioDic = [_audioOutputBuffer objectAtIndex:0];
-        NSString *serializeData = [[audioDic objectForKey:@"audioData"] autorelease];
+        NSString *serializeData = [audioDic objectForKey:@"audioData"];
         NSData *audioData = [NSData dataFromBase64String:serializeData];
         
         EncodedAudioBuffer encodedAB;
@@ -139,7 +141,7 @@ void DestroyAACELD() {
         encodedAB.data = malloc(sizeof(unsigned char) * (encodedAB.mDataBytesSize));
         memcpy(encodedAB.data, [audioData bytes], encodedAB.mDataBytesSize);
         
-        [audioData release];
+//        [audioData release];
         
         AudioBuffer sourceBuffer;
         

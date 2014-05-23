@@ -22,9 +22,11 @@
 
 - (id)init {
     if((self = [super init])) {
-        _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+        _socket = [[GCDTcpSocket alloc] initWithDelegate:self processQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
         _rrpcSenders = [[NSMutableArray alloc] init];
         _rrpcReceivers = [[NSMutableArray alloc] init];
+        _millis = [NSNumber numberWithDouble:0];
+        _recPcksCnt = [NSNumber numberWithLong:0];
     }
     return self;
 }
@@ -44,30 +46,28 @@
 
 - (void)dealloc {
     [_socket setDelegate:nil];
-    [_socket release];
-    [_sessionUUID release];
-    [_clientUUID release];
-    [_host release];
-    [_rrpcSenders removeAllObjects];
-    [_rrpcSenders release];
-    [_rrpcReceivers removeAllObjects];
-    [_rrpcReceivers release];
-    if(sendTmpBuffer != nil) {
-        [sendTmpBuffer release];
-        sendTmpBuffer = nil;
-    }
-    [super dealloc];
+//    [_socket release];
+//    [_sessionUUID release];
+//    [_clientUUID release];
+//    [_host release];
+//    [_rrpcSenders removeAllObjects];
+//    [_rrpcSenders release];
+//    [_rrpcReceivers removeAllObjects];
+//    [_rrpcReceivers release];
+//    if(sendTmpBuffer != nil) {
+//        [sendTmpBuffer release];
+//        sendTmpBuffer = nil;
+//    }
+//    [super dealloc];
 }
 
 
 #pragma mark - Methods
 
 - (void)connectToHost:(NSString *)host onPort:(uint16_t)port error:(NSError **)errPtr {
-	__block NSError *preConnectErr = nil;
-    if (![_socket connectToHost:host onPort:port error:&preConnectErr]) {// Asynchronous!
-        *errPtr = preConnectErr;
+    if (![_socket connectToHost:host onPort:port]) {// Asynchronous!
         // If there was an error, it's likely something like "already connected" or "no delegate set"
-        NSLog(@"I goofed: %@", preConnectErr);
+        NSLog(@"I goofed: ");
     }
 }
 
@@ -79,59 +79,55 @@
     if (_connected) {
         NSMutableDictionary *requestData = [[NSMutableDictionary alloc] init];
         [requestData setObject:@"createSession" forKey:@"request"];
-        sendTmpBuffer = [[NSJSONSerialization dataWithJSONObject:requestData options:kNilOptions error:nil] retain];
-        [_socket writeData:sendTmpBuffer withTimeout:-1 tag:-1];
-        [_socket readDataWithTimeout:-1 tag:2];
+        [_socket writeData:[NSJSONSerialization dataWithJSONObject:requestData options:kNilOptions error:nil]];
     }
 }
 
 - (void)initSenders {
-    dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
-    dispatch_async(createSendersQueue, ^(void) {
-        for(int i = 0; i < kSenderChannels; i++) {
+    for(int i = 0; i < kSenderChannels; i++) {
+        dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+        dispatch_async(createSendersQueue, ^(void) {
             RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
             rrpcSocket.receiver = NO;
-        }
-    });
+        });
+    }
 }
 
 - (void)initReceivers {
-    dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
-    dispatch_async(createSendersQueue, ^(void) {
-        for(int i = 0; i < kReceiversChannels; i++) {
+    for(int i = 0; i < kReceiversChannels; i++) {
+        dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
+        dispatch_async(createSendersQueue, ^(void) {
             RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
             rrpcSocket.receiver = YES;
-        }
-    });
+        });
+    }
 }
 
 #pragma mark - GCDAsyncSocket delegate methods
 
-- (void)socket:(GCDAsyncSocket *)sender didConnectToHost:(NSString *)host port:(UInt16)port {
+- (void)socket:(GCDTcpSocket *)socket didConnectToHost:(NSString *)host port:(UInt16)port {
     _connected = YES;
-    _host = [host retain];
+    _host = host;
     _port = port;
     NSLog(@"Cool, I'm connected! That was easy.");
 }
 
-- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)error {
+- (void)socketDidDisconnect:(GCDTcpSocket *)sock {
     _connected = NO;
     NSLog(@"Cool, I'm disconnected! That was easy.");
 }
 
-- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
+- (void)socketDidWriteData:(GCDTcpSocket *)socket {
     NSLog(@"Cool, I did write! That was easy.");
-    [sendTmpBuffer release];
-    sendTmpBuffer = nil;
 }
 
-- (void)socket:(GCDAsyncSocket *)sender didReadData:(NSData *)data withTag:(long)tag {
+- (void)socket:(GCDTcpSocket *)socket didReadData:(NSData*)data {
     NSLog(@"Cool, I did read! That was easy.");
     NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     NSString *request = [response objectForKey:@"request"];
     if ([request isEqualToString:@"createSession"] || [request isEqualToString:@"connectSession"] ) {
-        _sessionUUID = [[response objectForKey:@"sessionUUID"] retain];
-        _clientUUID = [[response objectForKey:@"clientUUID"] retain];
+        _sessionUUID = [response objectForKey:@"sessionUUID"];
+        _clientUUID = [response objectForKey:@"clientUUID"];
         [self initSenders];
         [self initReceivers];
         [[VBCAudioSession sharedInstance] startCapture];

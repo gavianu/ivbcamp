@@ -22,9 +22,8 @@
 		9B2B7FC7192B6AD400088B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FAB192B6AD400088B9B /* CoreData.framework */; };
 		9B2B7FCF192B6AD400088B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */; };
 		9B2B7FD1192B6AD400088B9B /* ivbcampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */; };
+		9B9ADC82192D076D0092B40C /* GCDTcpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */; };
 		9BB0F841192BC13D0091C124 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0F840192BC13D0091C124 /* NSData+Base64.m */; };
-		9BD5E5FC192B73EF0065815C /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E5F9192B73EF0065815C /* GCDAsyncSocket.m */; };
-		9BD5E5FD192B73EF0065815C /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */; };
 		9BD5E601192B74480065815C /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E600192B74480065815C /* MainViewController.mm */; };
 		9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E605192B76410065815C /* AACELDDecoder.cpp */; };
 		9BD5E60A192B76410065815C /* AACELDEncoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E607192B76410065815C /* AACELDEncoder.cpp */; };
@@ -63,12 +62,10 @@
 		9B2B7FCC192B6AD400088B9B /* ivbcampTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ivbcampTests-Info.plist"; sourceTree = "<group>"; };
 		9B2B7FCE192B6AD400088B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ivbcampTests.m; sourceTree = "<group>"; };
+		9B9ADC80192D076C0092B40C /* GCDTcpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTcpSocket.h; sourceTree = "<group>"; };
+		9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTcpSocket.m; sourceTree = "<group>"; };
 		9BB0F83F192BC13D0091C124 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		9BB0F840192BC13D0091C124 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		9BD5E5F8192B73EF0065815C /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
-		9BD5E5F9192B73EF0065815C /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
-		9BD5E5FA192B73EF0065815C /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		9BD5E5FF192B74480065815C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		9BD5E600192B74480065815C /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		9BD5E605192B76410065815C /* AACELDDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AACELDDecoder.cpp; sourceTree = "<group>"; };
@@ -210,10 +207,8 @@
 		9BD5E5F7192B73B70065815C /* GCDAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				9BD5E5F8192B73EF0065815C /* GCDAsyncSocket.h */,
-				9BD5E5F9192B73EF0065815C /* GCDAsyncSocket.m */,
-				9BD5E5FA192B73EF0065815C /* GCDAsyncUdpSocket.h */,
-				9BD5E5FB192B73EF0065815C /* GCDAsyncUdpSocket.m */,
+				9B9ADC80192D076C0092B40C /* GCDTcpSocket.h */,
+				9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */,
 			);
 			path = GCDAsyncSocket;
 			sourceTree = "<group>";
@@ -354,9 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BD5E5FC192B73EF0065815C /* GCDAsyncSocket.m in Sources */,
 				9BD5E601192B74480065815C /* MainViewController.mm in Sources */,
-				9BD5E5FD192B73EF0065815C /* GCDAsyncUdpSocket.m in Sources */,
 				9B2B7FB8192B6AD400088B9B /* AppDelegate.mm in Sources */,
 				9BD5E60A192B76410065815C /* AACELDEncoder.cpp in Sources */,
 				9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */,
@@ -367,6 +360,7 @@
 				9B2B7FB4192B6AD400088B9B /* main.mm in Sources */,
 				9BB0F841192BC13D0091C124 /* NSData+Base64.m in Sources */,
 				9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */,
+				9B9ADC82192D076D0092B40C /* GCDTcpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
 				INFOPLIST_FILE = "ivbcamp/ivbcamp-Info.plist";
@@ -501,7 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ivbcamp/ivbcamp-Prefix.pch";
 				INFOPLIST_FILE = "ivbcamp/ivbcamp-Info.plist";

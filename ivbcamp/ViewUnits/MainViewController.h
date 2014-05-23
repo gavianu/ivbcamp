@@ -10,11 +10,11 @@
 
 @interface MainViewController : UIViewController<UITextFieldDelegate>
 
-@property (retain, nonatomic) UITextField           *serverAddressField;
-@property (retain, nonatomic) UISegmentedControl    *codecPicker;
-@property (retain, nonatomic) UIButton              *connectButton;
+@property (strong, nonatomic) UITextField           *serverAddressField;
+@property (strong, nonatomic) UISegmentedControl    *codecPicker;
+@property (strong, nonatomic) UIButton              *connectButton;
 
-@property (retain, nonatomic) NSString              *serverAddress;
+@property (strong, nonatomic) NSString              *serverAddress;
 
 
 - (void)connectButtonTapped;

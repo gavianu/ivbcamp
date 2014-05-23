@@ -12,8 +12,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (retain, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow *window;
 
-@property (retain, nonatomic) MainViewController *mainViewController;
+@property (strong, nonatomic) MainViewController *mainViewController;
 
 @end

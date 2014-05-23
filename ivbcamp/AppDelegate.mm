@@ -16,11 +16,11 @@
 
 //No need on ARC enable
 
-- (void)dealloc {
-    [_mainViewController release];
-    [_window release];
-    [super dealloc];
-}
+//- (void)dealloc {
+//    [_mainViewController release];
+//    [_window release];
+//    [super dealloc];
+//}
 
 #pragma mark - application lifeclycle
 

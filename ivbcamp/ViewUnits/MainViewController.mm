@@ -27,13 +27,13 @@
 #pragma mark - deallocation
 
 //No need on ARC enable
-- (void)dealloc {
-    [_serverAddressField release];
-    [_codecPicker release];
-    [_connectButton release];
-    [_serverAddress release];
-    [super dealloc];
-}
+//- (void)dealloc {
+//    [_serverAddressField release];
+//    [_codecPicker release];
+//    [_connectButton release];
+//    [_serverAddress release];
+//    [super dealloc];
+//}
 
 #pragma mark - Lifecycle
 
@@ -71,7 +71,7 @@
     [_connectButton addTarget:self action:@selector(connectButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     
     
-    _serverAddress = @"192.168.50.5";
+    _serverAddress = @"192.168.0.102";
     
     [[SessionConnection sharedInstance] connectToHost:_serverAddress onPort:7827 error:nil];
 
