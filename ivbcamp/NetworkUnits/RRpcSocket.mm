@@ -117,12 +117,13 @@
                 NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
                 
                 SessionConnection *sessionConnection = [SessionConnection sharedInstance];
+                
                 double tmpMilis = [[sessionConnection millis] doubleValue];
-                double tmpMilis2 = - ((double)[date timeIntervalSinceReferenceDate]) * 1000;
-//                [sessionConnection setMillis:[NSNumber numberWithDouble:tmpMilis]];
+                tmpMilis += -[date timeIntervalSinceNow]*1000;
+                [sessionConnection setMillis:[NSNumber numberWithDouble:tmpMilis]];
                 long tmpCnt = [[sessionConnection recPcksCnt] longValue];
-//                [sessionConnection setRecPcksCnt:[NSNumber numberWithLong:tmpCnt++]];
-                NSLog(@"--- Lag: %f Jitter: %f , %f, %lu ", -[date timeIntervalSinceNow] * 1000, tmpMilis/tmpCnt, tmpMilis2, tmpCnt);
+                
+                NSLog(@"--- Lag: %f Jitter: %f , %lu ", -[date timeIntervalSinceNow] * 1000, tmpMilis/tmpCnt, tmpCnt);
                 
                 
                 audioDataProcessor.lastPckCnt = [NSNumber numberWithLong:[dataPckCount longValue]];
