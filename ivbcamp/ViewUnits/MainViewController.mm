@@ -71,7 +71,7 @@
     [_connectButton addTarget:self action:@selector(connectButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     
     
-    _serverAddress = @"192.168.0.102";
+    _serverAddress = @"192.168.1.5";
     
     [[SessionConnection sharedInstance] connectToHost:_serverAddress onPort:7827 error:nil];
 

@@ -86,6 +86,23 @@ void InitG729() {
     Init_Cod_cng();
 }
 
+void Pre_Process_IOS(Word16 *pcmserial, Word16 lg) {
+    
+    Pre_Process(pcmserial, lg);
+    
+}
+
+void Coder_ld8a_IOS( Word16 ana[],       /* output  : Analysis parameters */
+                Word16 frame,
+                Word16 vad_enable) {
+    
+    Coder_ld8a(ana, frame, vad_enable);
+}
+
+void  prm2bits_ld8k_IOS(Word16 prm[], Word16 bits[]) {
+    prm2bits_ld8k( prm, bits);
+}
+
 @implementation AudioDataProcessor
 
 #pragma mark - Initialization
@@ -156,10 +173,10 @@ void InitG729() {
     Word16 *pcmSerial = (Word16 *)malloc(rawInputData->mBuffers[0].mDataByteSize*sizeof(Word16));
     memcpy(pcmSerial, rawInputData->mBuffers[0].mData, rawInputData->mBuffers[0].mDataByteSize);
     
-    Pre_Process(pcmSerial, L_FRAME);
-//    Coder_ld8a(prm, frame, vad_enable);
-//    prm2bits_ld8k( prm, serial);
-//    nb_words = serial[1] +  (Word16)2;
+    Pre_Process_IOS(pcmSerial, L_FRAME);
+    Coder_ld8a_IOS(prm, frame, vad_enable);
+    prm2bits_ld8k_IOS( prm, serial);
+    nb_words = serial[1] +  (Word16)2;
     NSLog(@"encoded data size: %d", nb_words);
     
 //    SessionConnection *sessionConnection = [SessionConnection sharedInstance];
