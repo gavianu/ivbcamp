@@ -84,23 +84,21 @@
 }
 
 - (void)initSenders {
-    for(int i = 0; i < kSenderChannels; i++) {
         dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
         dispatch_async(createSendersQueue, ^(void) {
             RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
             rrpcSocket.receiver = NO;
+            [_rrpcSenders addObject:rrpcSocket];
         });
-    }
 }
 
 - (void)initReceivers {
-    for(int i = 0; i < kReceiversChannels; i++) {
         dispatch_queue_t createSendersQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0);
         dispatch_async(createSendersQueue, ^(void) {
             RRpcSocket *rrpcSocket = [[RRpcSocket alloc] init];
             rrpcSocket.receiver = YES;
+            [rrpcSocket listenOnPort:7827];
         });
-    }
 }
 
 #pragma mark - GCDAsyncSocket delegate methods

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //#import "GCDAsyncSocket.h"
-#import "GCDTcpSocket.h"
+#import "GCDUdpSocket.h"
 
 @interface RRpcSocket : NSObject {
 //    NSData  *sendTmpBuffer; //release after write on socket;
@@ -17,8 +17,9 @@
 }
 
 @property(nonatomic) BOOL receiver;
-@property (nonatomic, strong, readonly) GCDTcpSocket *socket;
+@property (nonatomic, strong, readonly) GCDUdpSocket *socket;
 
 -(void)send:(NSDictionary *)jsonDictionary;
+-(void)listenOnPort:(int)port;
 
 @end

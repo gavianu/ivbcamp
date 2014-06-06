@@ -22,6 +22,7 @@
 		9B2B7FC7192B6AD400088B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FAB192B6AD400088B9B /* CoreData.framework */; };
 		9B2B7FCF192B6AD400088B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */; };
 		9B2B7FD1192B6AD400088B9B /* ivbcampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */; };
+		9B82FA351935CF3800FB844C /* GCDUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82FA341935CF3800FB844C /* GCDUdpSocket.m */; };
 		9B9ADC82192D076D0092B40C /* GCDTcpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */; };
 		9BB0F841192BC13D0091C124 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0F840192BC13D0091C124 /* NSData+Base64.m */; };
 		9BD5E601192B74480065815C /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E600192B74480065815C /* MainViewController.mm */; };
@@ -62,6 +63,8 @@
 		9B2B7FCC192B6AD400088B9B /* ivbcampTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ivbcampTests-Info.plist"; sourceTree = "<group>"; };
 		9B2B7FCE192B6AD400088B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ivbcampTests.m; sourceTree = "<group>"; };
+		9B82FA331935CF3800FB844C /* GCDUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDUdpSocket.h; sourceTree = "<group>"; };
+		9B82FA341935CF3800FB844C /* GCDUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDUdpSocket.m; sourceTree = "<group>"; };
 		9B9ADC80192D076C0092B40C /* GCDTcpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTcpSocket.h; sourceTree = "<group>"; };
 		9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTcpSocket.m; sourceTree = "<group>"; };
 		9BB0F83F192BC13D0091C124 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 			children = (
 				9B9ADC80192D076C0092B40C /* GCDTcpSocket.h */,
 				9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */,
+				9B82FA331935CF3800FB844C /* GCDUdpSocket.h */,
+				9B82FA341935CF3800FB844C /* GCDUdpSocket.m */,
 			);
 			path = GCDAsyncSocket;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				9BB0F841192BC13D0091C124 /* NSData+Base64.m in Sources */,
 				9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */,
 				9B9ADC82192D076D0092B40C /* GCDTcpSocket.m in Sources */,
+				9B82FA351935CF3800FB844C /* GCDUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
