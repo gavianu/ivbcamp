@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //#import "GCDAsyncSocket.h"
-#import "GCDTcpSocket.h"
+#import "GCDAsyncUdpSocket.h"
 
 @interface SessionConnection : NSObject {
     
@@ -19,7 +19,7 @@
 
 @property (nonatomic) BOOL  connected;
 //@property (nonatomic, strong, readonly) GCDAsyncSocket *socket;
-@property (nonatomic, strong, readonly) GCDTcpSocket *socket;
+@property (nonatomic, strong, readonly) GCDAsyncUdpSocket *socket;
 @property (nonatomic, strong)   NSString *sessionUUID;
 @property (nonatomic, strong)   NSString *clientUUID;
 @property (nonatomic, readonly, strong) NSString *host;
@@ -36,5 +36,6 @@
 - (void)connectToHost:(NSString *)host onPort:(uint16_t)port error:(NSError **)errPtr;
 - (void)disconnect;
 - (void)startAudioSession;
+- (void)sendData:(NSDictionary *)jsonDictionary;
 
 @end

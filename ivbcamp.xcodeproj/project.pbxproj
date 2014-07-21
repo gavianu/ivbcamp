@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B0C1A8419422CA90045C810 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C1A8119422CA90045C810 /* GCDAsyncSocket.m */; };
+		9B0C1A8519422CA90045C810 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0C1A8319422CA90045C810 /* GCDAsyncUdpSocket.m */; };
 		9B2B7FA6192B6AD400088B9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA5192B6AD400088B9B /* Foundation.framework */; };
 		9B2B7FA8192B6AD400088B9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA7192B6AD400088B9B /* CoreGraphics.framework */; };
 		9B2B7FAA192B6AD400088B9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FA9192B6AD400088B9B /* UIKit.framework */; };
@@ -22,8 +24,6 @@
 		9B2B7FC7192B6AD400088B9B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B2B7FAB192B6AD400088B9B /* CoreData.framework */; };
 		9B2B7FCF192B6AD400088B9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B2B7FCD192B6AD400088B9B /* InfoPlist.strings */; };
 		9B2B7FD1192B6AD400088B9B /* ivbcampTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */; };
-		9B82FA351935CF3800FB844C /* GCDUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B82FA341935CF3800FB844C /* GCDUdpSocket.m */; };
-		9B9ADC82192D076D0092B40C /* GCDTcpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */; };
 		9BB0F841192BC13D0091C124 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0F840192BC13D0091C124 /* NSData+Base64.m */; };
 		9BD5E601192B74480065815C /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E600192B74480065815C /* MainViewController.mm */; };
 		9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E605192B76410065815C /* AACELDDecoder.cpp */; };
@@ -31,7 +31,6 @@
 		9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E60C192B766D0065815C /* VBCAudioSession.m */; };
 		9BD5E610192B76BA0065815C /* AudioDataProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E60F192B76BA0065815C /* AudioDataProcessor.mm */; };
 		9BD5E613192B78630065815C /* SessionConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E612192B78630065815C /* SessionConnection.mm */; };
-		9BD5E616192B86C50065815C /* RRpcSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9BD5E615192B86C50065815C /* RRpcSocket.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B0C1A8019422CA90045C810 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		9B0C1A8119422CA90045C810 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		9B0C1A8219422CA90045C810 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		9B0C1A8319422CA90045C810 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		9B2B7FA2192B6AD400088B9B /* ivbcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ivbcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2B7FA5192B6AD400088B9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B2B7FA7192B6AD400088B9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,10 +66,6 @@
 		9B2B7FCC192B6AD400088B9B /* ivbcampTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ivbcampTests-Info.plist"; sourceTree = "<group>"; };
 		9B2B7FCE192B6AD400088B9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B2B7FD0192B6AD400088B9B /* ivbcampTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ivbcampTests.m; sourceTree = "<group>"; };
-		9B82FA331935CF3800FB844C /* GCDUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDUdpSocket.h; sourceTree = "<group>"; };
-		9B82FA341935CF3800FB844C /* GCDUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDUdpSocket.m; sourceTree = "<group>"; };
-		9B9ADC80192D076C0092B40C /* GCDTcpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTcpSocket.h; sourceTree = "<group>"; };
-		9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTcpSocket.m; sourceTree = "<group>"; };
 		9BB0F83F192BC13D0091C124 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		9BB0F840192BC13D0091C124 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		9BD5E5FF192B74480065815C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -81,8 +80,6 @@
 		9BD5E60F192B76BA0065815C /* AudioDataProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioDataProcessor.mm; sourceTree = "<group>"; };
 		9BD5E611192B78630065815C /* SessionConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionConnection.h; sourceTree = "<group>"; };
 		9BD5E612192B78630065815C /* SessionConnection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SessionConnection.mm; sourceTree = "<group>"; };
-		9BD5E614192B86C50065815C /* RRpcSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRpcSocket.h; sourceTree = "<group>"; };
-		9BD5E615192B86C50065815C /* RRpcSocket.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RRpcSocket.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +108,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B0C1A7919422C590045C810 /* GCDAsync */ = {
+			isa = PBXGroup;
+			children = (
+				9B0C1A8019422CA90045C810 /* GCDAsyncSocket.h */,
+				9B0C1A8119422CA90045C810 /* GCDAsyncSocket.m */,
+				9B0C1A8219422CA90045C810 /* GCDAsyncUdpSocket.h */,
+				9B0C1A8319422CA90045C810 /* GCDAsyncUdpSocket.m */,
+			);
+			path = GCDAsync;
+			sourceTree = "<group>";
+		};
 		9B2B7F99192B6AD400088B9B = {
 			isa = PBXGroup;
 			children = (
@@ -198,24 +206,11 @@
 		9BD5E5F6192B739E0065815C /* NetworkUnits */ = {
 			isa = PBXGroup;
 			children = (
-				9BD5E5F7192B73B70065815C /* GCDAsyncSocket */,
+				9B0C1A7919422C590045C810 /* GCDAsync */,
 				9BD5E611192B78630065815C /* SessionConnection.h */,
 				9BD5E612192B78630065815C /* SessionConnection.mm */,
-				9BD5E614192B86C50065815C /* RRpcSocket.h */,
-				9BD5E615192B86C50065815C /* RRpcSocket.mm */,
 			);
 			path = NetworkUnits;
-			sourceTree = "<group>";
-		};
-		9BD5E5F7192B73B70065815C /* GCDAsyncSocket */ = {
-			isa = PBXGroup;
-			children = (
-				9B9ADC80192D076C0092B40C /* GCDTcpSocket.h */,
-				9B9ADC81192D076C0092B40C /* GCDTcpSocket.m */,
-				9B82FA331935CF3800FB844C /* GCDUdpSocket.h */,
-				9B82FA341935CF3800FB844C /* GCDUdpSocket.m */,
-			);
-			path = GCDAsyncSocket;
 			sourceTree = "<group>";
 		};
 		9BD5E5FE192B74230065815C /* ViewUnits */ = {
@@ -354,19 +349,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B0C1A8419422CA90045C810 /* GCDAsyncSocket.m in Sources */,
 				9BD5E601192B74480065815C /* MainViewController.mm in Sources */,
 				9B2B7FB8192B6AD400088B9B /* AppDelegate.mm in Sources */,
 				9BD5E60A192B76410065815C /* AACELDEncoder.cpp in Sources */,
 				9BD5E609192B76410065815C /* AACELDDecoder.cpp in Sources */,
 				9B2B7FBB192B6AD400088B9B /* ivbcamp.xcdatamodeld in Sources */,
-				9BD5E616192B86C50065815C /* RRpcSocket.mm in Sources */,
 				9BD5E613192B78630065815C /* SessionConnection.mm in Sources */,
 				9BD5E610192B76BA0065815C /* AudioDataProcessor.mm in Sources */,
 				9B2B7FB4192B6AD400088B9B /* main.mm in Sources */,
 				9BB0F841192BC13D0091C124 /* NSData+Base64.m in Sources */,
+				9B0C1A8519422CA90045C810 /* GCDAsyncUdpSocket.m in Sources */,
 				9BD5E60D192B766D0065815C /* VBCAudioSession.m in Sources */,
-				9B9ADC82192D076D0092B40C /* GCDTcpSocket.m in Sources */,
-				9B82FA351935CF3800FB844C /* GCDUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

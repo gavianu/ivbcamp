@@ -9,7 +9,6 @@
 #import "AudioDataProcessor.h"
 
 #import "SessionConnection.h"
-#import "RRpcSocket.h"
 #import "NSData+Base64.h"
 
 
@@ -124,7 +123,8 @@ void DestroyAACELD() {
 //    [audioData release];
     [dataPacket setObject:newStr forKey:@"audioData"];
 //    NSLog(@"trimit date ");
-    [[[sessionConnection rrpcSenders] firstObject] send:dataPacket];
+    [sessionConnection sendData:dataPacket];
+//    [[[sessionConnection rrpcSenders] firstObject] send:dataPacket];
 ////    [dataPacket release];
     
 }
